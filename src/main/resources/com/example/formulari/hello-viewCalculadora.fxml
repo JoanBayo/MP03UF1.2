@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Button?>
+
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.formulari.HelloControllerCalculadora">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    </padding>
+
+    <Label fx:id="resultat"/>
+
+    <HBox>
+        <TextField fx:id="numeros1"/>
+    </HBox>
+    <HBox>
+    <TextField fx:id="numeros2"/>
+    </HBox>
+    <HBox>
+        <Button id="boto1" text="1" onAction="#boto1" styleClass="btn-info"/>
+        <Button id="boto2" text="2" onAction="#boto2" styleClass="btn-info"/>
+        <Button id="boto3" text="3" onAction="#boto3" styleClass="btn-info"/>
+        <Button id="suma" text="+" onAction="#botosuma" styleClass="btn-info"/>
+    </HBox>
+    <HBox>
+        <Button id="boto4" text="4" onAction="#boto4" styleClass="btn-info"/>
+        <Button id="boto5" text="5" onAction="#boto5" styleClass="btn-info"/>
+        <Button id="boto6" text="6" onAction="#boto6" styleClass="btn-info"/>
+        <Button id="resta" text="-" onAction="#botoresta" styleClass="btn-info"/>
+    </HBox>
+    <HBox>
+        <Button id="boto7" text="7" onAction="#boto7" styleClass="btn-info"/>
+        <Button id="boto8" text="8" onAction="#boto8" styleClass="btn-info"/>
+        <Button id="boto9" text="9" onAction="#boto9" styleClass="btn-info"/>
+        <Button id="mult" text="*" onAction="#botomulti" styleClass="btn-info"/>
+    </HBox>
+    <HBox>
+        <Button id="botopunt" text="." onAction="#botopunt" styleClass="btn-info"/>
+        <Button id="boto0" text="0" onAction="#boto0" styleClass="btn-info"/>
+        <Button id="botoIgual" text="=" onAction="#botoIgual" styleClass="btn-info"/>
+        <Button id="divi" text="/" onAction="#botodivi" styleClass="btn-info"/>
+    </HBox>
+    <ImageView fitWidth="250" preserveRatio="true" fx:id="logo" >
+        <image>
+            <Image url="https://www.cromosomax.com/pics/2015/02/cristiano-ronaldo-desnudo-cr7.jpg" />
+        </image>
+    </ImageView>
+</VBox>
