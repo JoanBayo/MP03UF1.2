@@ -5,52 +5,35 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
+import java.util.ArrayList;
+import java.util.Objects;
+
 public class HelloControllerCalculadora {
     @FXML
     private Label resultat;
     @FXML
     private TextField numeros1;
-    @FXML
-    private TextField numeros2;
 
-    int operacio;
+
+    String operacio;
+
 
 
     @FXML
     protected void botosuma() {
-        if (operacio == 0){
-            operacio = Integer.parseInt(numeros1.getText());
-        }else{
-            numeros2.setText(String.valueOf(operacio + Integer.parseInt(numeros1.getText())));
-        }
-        numeros1.setText(numeros1.getText() + "+");
+        numeros1.setText(numeros1.getText() + " + ");
     }
     @FXML
     protected void botoresta() {
-        if (operacio == 0){
-            operacio = Integer.parseInt(numeros1.getText());
-        }else{
-            operacio = operacio - Integer.parseInt(numeros1.getText());
-        }
-        numeros1.setText(numeros1.getText() + "-");
+        numeros1.setText(numeros1.getText() + " - ");
     }
     @FXML
     protected void botomulti() {
-        if (operacio == 0){
-            operacio = Integer.parseInt(numeros1.getText());
-        }else{
-            operacio = operacio * Integer.parseInt(numeros1.getText());
-        }
-        numeros1.setText(numeros1.getText() + "*");
+        numeros1.setText(numeros1.getText() + " * ");
     }
     @FXML
     protected void botodivi() {
-        if (operacio == 0){
-            operacio = Integer.parseInt(numeros1.getText());
-        }else{
-            operacio = operacio / Integer.parseInt(numeros1.getText());
-        }
-        numeros1.setText(numeros1.getText() + "/");
+        numeros1.setText(numeros1.getText() + " / ");
     }
 
     public void boto1(ActionEvent actionEvent) {
@@ -98,8 +81,28 @@ public class HelloControllerCalculadora {
     }
 
     public void botoIgual(ActionEvent actionEvent) {
-        numeros2.setText(String.valueOf(operacio));
+         operacio = numeros1.getText();
+         double resultat = 0;
+         try {
+             String [] operacioParts = operacio.split(" ");
+             if (Objects.equals(operacioParts[1], "+")){
+                 resultat = Double.parseDouble(operacioParts[0]) + Double.parseDouble(operacioParts[2]);
+             }
+             if (Objects.equals(operacioParts[1], "-")){
+                 resultat = Double.parseDouble(operacioParts[0]) - Double.parseDouble(operacioParts[2]);
+             }
+             if (Objects.equals(operacioParts[1], "*")){
+                 resultat = Double.parseDouble(operacioParts[0]) * Double.parseDouble(operacioParts[2]);
+             }
+             if (Objects.equals(operacioParts[1], "/")){
+                 resultat = Double.parseDouble(operacioParts[0]) / Double.parseDouble(operacioParts[2]);
+             }
+         }catch (Exception ignored) {
+         }
+        numeros1.setText(String.valueOf(resultat));
     }
 
-
+    public void botoClear(ActionEvent actionEvent) {
+        numeros1.setText("");
+    }
 }

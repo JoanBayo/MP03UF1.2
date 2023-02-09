@@ -21,9 +21,6 @@
         <TextField fx:id="numeros1"/>
     </HBox>
     <HBox>
-    <TextField fx:id="numeros2"/>
-    </HBox>
-    <HBox>
         <Button id="boto1" text="1" onAction="#boto1" styleClass="btn-info"/>
         <Button id="boto2" text="2" onAction="#boto2" styleClass="btn-info"/>
         <Button id="boto3" text="3" onAction="#boto3" styleClass="btn-info"/>
@@ -44,12 +41,15 @@
     <HBox>
         <Button id="botopunt" text="." onAction="#botopunt" styleClass="btn-info"/>
         <Button id="boto0" text="0" onAction="#boto0" styleClass="btn-info"/>
-        <Button id="botoIgual" text="=" onAction="#botoIgual" styleClass="btn-info"/>
+        <Button id="botoIgual" text="C" onAction="#botoClear" styleClass="btn-info"/>
         <Button id="divi" text="/" onAction="#botodivi" styleClass="btn-info"/>
+    </HBox>
+    <HBox>
+        <Button id="botoIgual" text="=" onAction="#botoIgual" styleClass="btn-primary"/>
     </HBox>
     <ImageView fitWidth="250" preserveRatio="true" fx:id="logo" >
         <image>
-            <Image url="https://www.cromosomax.com/pics/2015/02/cristiano-ronaldo-desnudo-cr7.jpg" />
+            <Image url="https://img.freepik.com/vector-premium/simple-calculadora-garabatear-ilustracion-vector-colorido-dibujado-mano_172597-437.jpg?w=2000" />
         </image>
     </ImageView>
 </VBox>
